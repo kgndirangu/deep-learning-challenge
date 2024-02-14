@@ -13,17 +13,19 @@ Module 21
 1.  What variable(s) are the target(s) for your model? IS_SUCCESSFUL
 2.  What variable(s) are the feature(s) for your model? APPLICATION_TYPE (created dummies), AFFILIATION, CLASSIFICATION (created dummies), USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT
 3.  What variable(s) should be removed from the input data because they are neither targets nor features? NAME and EIN, however I did try to test removing NAME
-4.  How many neurons, layers, and activation functions did you select for your neural network model, and why? In the intial model I used 2 layers with 80 and 30 neurons respectively. Activation function relu was used for layer 1 and 2, sigmoid was used for the output layer.  
-5.  Were you able to achieve the target model performance? No
+4.  How many neurons, layers, and activation functions did you select for your neural network model, and why? In the intial model I used 2 layers with 80 and 30 neurons respectively. Activation function relu was used for layer 1 and 2, sigmoid was used for the output layer. Ateempt 1, 2 and 3 changes ##### 
+5.  Were you able to achieve the target model performance? None of those 3 attempts improved accuracy 
 6.  What steps did you take in your attempts to increase model performance? Interestingly, all steps during optimization reduced model performance by XXX
 
+
+##ADD TABLE do in excel then take snapshot
 * Initial Model:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  * 
   --268/268 - 1s - loss: 0.5568 - accuracy: 0.7266 - 502ms/epoch - 2ms/step
 Loss: 0.5568206906318665, Accuracy: 0.7266472578048706
 
 * Optimization Attempt 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  * Changed threshold for 'application type' and 'classification' were increased reulting in fewer bins.
   --268/268 - 1s - loss: 0.5648 - accuracy: 0.7254 - 536ms/epoch - 2ms/step
 Loss: 0.5648394227027893, Accuracy: 0.725364446640014
              
@@ -41,5 +43,9 @@ Loss: 0.5660290718078613, Accuracy: 0.7257142663002014
 
 
 ## Summary
-Note, did not save every 5 epochs during optimization due to time it takes to run the model.
 Unable to achieve greater accuracy than in the initial model.  
+
+Change the optimizer within this model. Or could use other supervised learning like decision trees, logistic regression, random forest, support vector (ie a classification model)
+
+References
+https://www.analyticsvidhya.com/blog/2021/10/a-comprehensive-guide-on-deep-learning-optimizers/
