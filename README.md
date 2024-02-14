@@ -10,7 +10,12 @@ Module 21
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+1.  What variable(s) are the target(s) for your model? IS_SUCCESSFUL
+2.  What variable(s) are the feature(s) for your model? APPLICATION_TYPE (created dummies), AFFILIATION, CLASSIFICATION (created dummies), USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, ASK_AMT
+3.  What variable(s) should be removed from the input data because they are neither targets nor features? NAME and EIN, however I did try to test removing NAME
+4.  How many neurons, layers, and activation functions did you select for your neural network model, and why? In the intial model I used 2 layers with 80 and 30 neurons respectively. Activation function relu was used for layer 1 and 2, sigmoid was used for the output layer.  
+5.  Were you able to achieve the target model performance? No
+6.  What steps did you take in your attempts to increase model performance? Interestingly, all steps during optimization reduced model performance by XXX
 
 * Initial Model:
   * Description of Model 1 Accuracy, Precision, and Recall scores.
@@ -29,10 +34,12 @@ Loss: 0.5721397995948792, Accuracy: 0.7255976796150208
 
 * Optimization Attempt 3:
   * Change 'relu' to 'sigmoid' in layers 1 and 2, increase neurons to 120, 80, 40  
-  --no change compared to attempt 2
-  --268/268 - 0s - loss: 0.5721 - accuracy: 0.7256 - 374ms/epoch - 1ms/step
-Loss: 0.5721397995948792, Accuracy: 0.7255976796150208
+  --initally reduced epoch to 50
+  --268/268 - 1s - loss: 0.5660 - accuracy: 0.7257 - 554ms/epoch - 2ms/step
+Loss: 0.5660290718078613, Accuracy: 0.7257142663002014
 
 
 
 ## Summary
+Note, did not save every 5 epochs during optimization due to time it takes to run the model.
+Unable to achieve greater accuracy than in the initial model.  
